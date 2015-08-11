@@ -1,0 +1,7 @@
+0.217922606925
+Most Informative Features
+          contains(tech) = True           YouTub : Entert =    103.1 : 1.0
+       contains(service) = True           YouTub : Entert =     73.6 : 1.0
+        contains(choice) = True           YouTub : Fun    =     68.6 : 1.0
+     contains(encourage) = True           YouTub : Pre-Vi =     61.1 : 1.0
+         contains(stays) = True           YouTub : Market =     57.0 : 1.0
