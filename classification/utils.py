@@ -22,25 +22,24 @@ def load_data(path='data.json'):
     shuffle(articles)
     return articles
 
-def get_tokens(articles, small_set=False):
+
+def get_tokens(articles, content_type):
     """
     :param articles:
-    :param small_set: use for testing small set
+    :param content_type:
     :return: list of tokens
     """
-    # make it smaller for testing
-    if small_set:
-        articles = articles[:150]
 
     # make vector-space
     all_tokens = []
     for a in articles:
-        all_tokens.extend(word_tokenize(a['content']))
+        all_tokens.extend(word_tokenize(a[content_type]))
     return all_tokens
 
 
 stemmer = SnowballStemmer("english")
 stopwords = set(nltk.corpus.stopwords.words('english'))
+
 
 def pre_process(tokens):
     """
@@ -80,3 +79,22 @@ def wrap_document_features(word_features):
         return features
 
     return document_features
+
+
+def extract_features(samples, content_type, save_to_file=False):
+    all_tokens = get_tokens(samples, content_type=content_type)
+
+    all_processed_words = pre_process(all_tokens)
+
+    all_word_freq = nltk.FreqDist(all_processed_words)
+    word_features = list(all_word_freq)[:2000]
+
+    document_features_extractor = wrap_document_features(word_features)
+
+    feature_sets = [(document_features_extractor(a[content_type]), a['class']) for a in samples]
+
+    if save_to_file:
+        with open("feature_sets.json", 'w') as data_file:
+            json.dump(feature_sets, data_file)
+
+    return feature_sets

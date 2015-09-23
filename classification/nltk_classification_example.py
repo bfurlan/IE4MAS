@@ -1,5 +1,6 @@
 __author__ = 'User'
 
+
 from nltk.corpus import movie_reviews
 import nltk
 from random import shuffle
