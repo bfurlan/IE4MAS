@@ -1,0 +1,1 @@
+Stanford NER lib available at http://nlp.stanford.edu/software/CRF-NER.shtml

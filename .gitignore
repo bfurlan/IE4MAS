@@ -6,3 +6,5 @@
 ie_aggregator/corpuses/*
 api_key.txt
 *.pyc
+api_key.txt
+*.pyc

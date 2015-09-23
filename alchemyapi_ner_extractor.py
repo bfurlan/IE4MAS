@@ -3,6 +3,10 @@ __author__ = 'User'
 from alchemyapi_python.alchemyapi import AlchemyAPI
 from collections import defaultdict
 
+'''
+AlchemyAPI available at http://www.alchemyapi.com/developers/sdks
+'''
+
 alchemyapi = AlchemyAPI()
 
 def alchemyapi_extract_ner(text):
