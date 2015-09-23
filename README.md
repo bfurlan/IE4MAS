@@ -14,7 +14,7 @@ Supports 3 NER modules:
 - Structured Support Vector Machines from MIT Information Extraction 
 (https://github.com/mit-nlp/MITIE)
 
-Also, the framework includes RE mogule that can extract several types of binary relationships from sentences. 
+Also, the framework includes Relationship Extraction module that can extract several types of binary relationships from sentences. 
 The relationship extraction is based on identified named entities from NER modules. 
 
 Information extracted from text (named entities and relationships) are converted to Datalog facts. 
